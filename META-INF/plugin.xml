@@ -1,0 +1,50 @@
+<idea-plugin version="2">
+  <id>com.eltonkola.androidsnippets</id>
+  <name>Android Snippets Search</name>
+  <version>1.0</version>
+  <vendor email="eltonkola@gmail.com" url="http://www.eltonkola.com">EltonKola</vendor>
+
+  <description><![CDATA[
+      Search android snippets directly from android studio.<br>
+      <em>code preview, online code and many other features</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      First version.<br>
+      <em>also check the the firefox search plugin, the chrome extension and the open source components of this service.</em>
+    ]]>
+  </change-notes>
+
+  <idea-version since-build="123"/>
+
+  <depends>com.intellij.modules.java</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+      <applicationConfigurable instance="com.eltonkola.androidsnippets.settings.Preferencat"/>
+  </extensions>
+
+  <application-components>
+    <!-- Add your application components here -->
+
+      <component><implementation-class>com.eltonkola.androidsnippets.MainApplicaton</implementation-class></component>
+
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+
+  </project-components>
+
+  <actions>
+    <!-- Add your actions here -->
+
+      <action icon="/icons/favicon.png" id="CodotaSearchEverywhereAction" class="com.eltonkola.androidsnippets.view.AndSnippetsMenuAction" text="Android Snippet Search" description="Search for snippets!">
+          <add-to-group group-id="ToolsMenu" anchor="last"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="control k"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="alt k"/>
+      </action>
+
+  </actions>
+
+</idea-plugin>
